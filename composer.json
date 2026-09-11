@@ -1,0 +1,36 @@
+{
+    "name": "welfare/verification",
+    "description": "Shared customer identity, KYC, and corporate CAC verification engine for Laravel apps — swappable verification drivers (IdentityPass, QoreID, Dojah), driven by config so providers can be swapped or combined. Returns standardized DTOs with no host app coupling.",
+    "type": "library",
+    "license": "proprietary",
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^10.0|^11.0|^12.0",
+        "illuminate/http": "^10.0|^11.0|^12.0",
+        "illuminate/contracts": "^10.0|^11.0|^12.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0|^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Welfare\\Verification\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Welfare\\Verification\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Welfare\\Verification\\VerificationServiceProvider"
+            ],
+            "aliases": {
+                "Verification": "Welfare\\Verification\\Facades\\Verification"
+            }
+        }
+    },
+    "minimum-stability": "stable"
+}
